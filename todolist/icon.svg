@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+    <defs>
+        <linearGradient id="bg" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#818cf8"/>
+            <stop offset="100%" stop-color="#4f46e5"/>
+        </linearGradient>
+        <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+            <feDropShadow dx="0" dy="10" stdDeviation="15" flood-opacity="0.3"/>
+        </filter>
+    </defs>
+    
+    <!-- 배경 둥근 사각형 -->
+    <rect width="512" height="512" rx="128" fill="#0f172a"/>
+    <rect width="460" height="460" x="26" y="26" rx="110" fill="url(#bg)"/>
+    
+    <!-- 중앙 체크마크 -->
+    <path d="M150 260 L230 340 L370 170" fill="none" stroke="#ffffff" stroke-width="48" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)"/>
+</svg>

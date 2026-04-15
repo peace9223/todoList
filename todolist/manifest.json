@@ -1,0 +1,21 @@
+{
+  "name": "SyncTodo Premium",
+  "short_name": "SyncTodo",
+  "description": "실시간 동기화 프리미엄 투두리스트",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "type": "image/svg+xml",
+      "sizes": "192x192 purpose=any maskable"
+    },
+    {
+      "src": "icon.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512 purpose=any maskable"
+    }
+  ]
+}

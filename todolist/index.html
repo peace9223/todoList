@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SyncTodo</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- PWA Settings -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0f172a">
+    <link rel="apple-touch-icon" href="icon.svg">
+</head>
+<body>
+    <!-- Animated Abstract Background -->
+    <div class="area" >
+        <ul class="circles">
+            <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+        </ul>
+    </div>
+
+    <!-- Main Application UI -->
+    <main class="app-container">
+        <header class="header">
+            <div class="title-wrapper">
+                <h1>SyncTodo</h1>
+                <div id="status-badge" class="badge">Local</div>
+            </div>
+            
+            <div class="share-container">
+                <button id="share-btn" class="share-btn">
+                    <i class="ph ph-link"></i>
+                    Share
+                </button>
+            </div>
+        </header>
+
+        <section class="todo-wrapper">
+            <div class="input-group">
+                <input type="text" id="task-input" autocomplete="off" placeholder="What needs to be done?">
+                <button id="add-btn" class="add-btn">
+                    <i class="ph ph-plus-circle"></i>
+                </button>
+            </div>
+
+            <div class="stats-container">
+                <p><span id="task-count">0</span> task(s) remaining</p>
+            </div>
+
+            <ul id="todo-list" class="todo-list">
+                <!-- Javascript will inject list items here -->
+            </ul>
+        </section>
+    </main>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">Link copied to clipboard!</div>
+
+    <!-- Application Logic -->
+    <script type="module" src="app.js"></script>
+
+    <!-- PWA Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('sw.js')
+            .then(reg => console.log('PWA ServiceWorker registered!'))
+            .catch(err => console.error('PWA ServiceWorker registration failed:', err));
+        });
+      }
+    </script>
+</body>
+</html>
